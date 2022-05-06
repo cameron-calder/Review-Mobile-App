@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/exploreFragment">
+
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.ccreview.fragments.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_exploreFragment_to_foodReviewDetailsFragment"
+            app:destination="@id/foodReviewDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.ccreview.fragments.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account">
+
+        <action
+            android:id="@+id/action_accountFragment_to_editReviewFragment"
+            app:destination="@id/editReviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.ccreview.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/foodReviewDetailsFragment"
+        android:name="com.example.ccreview.fragments.FoodReviewDetailsFragment"
+        android:label="fragment_food_review_details"
+        tools:layout="@layout/fragment_food_review_details">
+        <argument
+            android:name="restaurant"
+            app:argType="com.example.ccreview.models.Restaurant"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_foodReviewDetailsFragment_to_addReviewFragment"
+            app:destination="@id/addReviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addReviewFragment"
+        android:name="com.example.ccreview.fragments.AddReviewFragment"
+        android:label="fragment_add_review"
+        tools:layout="@layout/fragment_add_review">
+
+        <argument
+            android:name="restaurant"
+            app:argType="com.example.ccreview.models.Restaurant"
+            app:nullable="false" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/editReviewFragment"
+        android:name="com.example.ccreview.fragments.EditReviewFragment"
+        android:label="EditReviewFragment"
+        tools:layout="@layout/fragment_edit_review">
+        <argument
+            android:name="review"
+            app:argType="com.example.ccreview.models.Review"
+            app:nullable="false" />
+    </fragment>
+</navigation>

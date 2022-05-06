@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100"
+    android:orientation="vertical"
+    tools:context=".fragments.AddReviewFragment">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/green" />
+
+            <ImageButton
+                android:id="@+id/btnMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/__more_2_line"
+                app:tint="@color/green" />
+
+        </RelativeLayout>
+
+    </Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_bottom"
+                android:padding="@dimen/margin_16">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivThumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/unsplash_fdlzbwip0am" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="@string/martin_berasategui"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvDesc"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="@string/_20356_pacific_coast_hwy_malibu_ca_90265_5428"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_rate_the_visit_and_leave_your_feedback"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    android:id="@+id/materialRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:rating="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mrb_progressBackgroundTint="@color/grey_light" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:hint="@string/enter_headline_here"
+                    app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopStart="@dimen/edit_text_radius">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:paddingTop="16sp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:hint="@string/leave_your_feedback"
+                    android:minHeight="100dp"
+                    app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopStart="@dimen/edit_text_radius">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:minHeight="100dp"
+                        android:paddingTop="16sp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_baseline_add_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@color/green"
+                    android:gravity="center_vertical"
+                    app:icon="@drawable/ic_baseline_add_24"
+                    android:textStyle="normal"
+                    app:iconTint="@color/green"
+                    android:textAllCaps="false"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:text="@string/upload_file"
+                    android:textColor="@color/black" />
+
+                <androidx.cardview.widget.CardView
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/layoutAttachment"
+                    app:cardCornerRadius="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ivAttachment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <RelativeLayout
+                            android:layout_alignParentTop="true"
+                            android:paddingHorizontal="12dp"
+                            android:background="@color/grey_lighter"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:textSize="16dp"
+                                android:id="@+id/tvAttachmentTitle"
+                                android:layout_toStartOf="@id/btnRemove"
+                                android:layout_centerVertical="true"
+                                android:ellipsize="end"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageButton
+                                android:id="@+id/btnRemove"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:src="@drawable/ic_baseline_close_24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/check_box_height"
+                    android:layout_marginTop="8dp"
+                    android:button="@drawable/custom_check_box_selector"
+                    android:checked="false"
+                    android:padding="10dp"
+                    android:text="@string/tag_a_review_with_a_location"
+                    app:buttonTint="@null"
+                    app:useMaterialThemeColors="false" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLocation"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/city_name"
+                    app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopStart="@dimen/edit_text_radius">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:gravity="top"
+                        android:paddingTop="16sp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="@dimen/margin_16"
+                    android:text="@string/add_review"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/edit_text_radius"
+                    app:icon="@drawable/ic_baseline_check_24"
+                    app:iconGravity="textStart" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

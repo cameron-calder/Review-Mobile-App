@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100"
+    android:orientation="vertical"
+    tools:context=".fragments.ExploreFragment">
+
+    <Toolbar
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:paddingHorizontal="@dimen/margin_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/btnFilter"
+                android:hint="@string/search"
+                app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                app:boxCornerRadiusTopStart="@dimen/edit_text_radius"
+                app:startIconDrawable="@drawable/__search_2_fill">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="4dp"
+                app:cornerRadius="@dimen/edit_text_radius"
+                android:id="@+id/btnFilter"
+                style="@style/Widget.MaterialComponents.Button.IconOnly"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="true"
+                android:padding="20dp"
+                android:text=""
+                app:icon="@drawable/filter"
+                app:iconGravity="textStart" />
+        </RelativeLayout>
+    </Toolbar>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:clipToPadding="false"
+            android:paddingBottom="?actionBarSize"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/local_cuisine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:textColor="@color/green"
+                        android:text="@string/show_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:id="@+id/rvLocalCuisine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/moderately_priced"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:textColor="@color/green"
+                        android:text="@string/show_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:id="@+id/rvModeratelyPriced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/vegan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:textColor="@color/green"
+                        android:text="@string/show_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:id="@+id/rvVegan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="32dp">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flEmojis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginBottom="8dp"
+        app:alignContent="space_between"
+        app:flexDirection="row"
+        app:justifyContent="space_between">
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="4dp"
+        android:background="#DADCDD" />
+
+    <LinearLayout
+        android:id="@+id/llComment"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/systems___arrow_go_forward_fill"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            android:text="Reply"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/systems___share_fill"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            android:text="Share"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/ic_baseline_delete_24"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/green"
+            android:padding="12dp"
+            android:text="Delete"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/tvComplain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/__alert_fill"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            android:text="Complain"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/llResolution"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:drawableStart="@drawable/ic_baseline_cancel_24"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/green"
+            android:padding="12dp"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

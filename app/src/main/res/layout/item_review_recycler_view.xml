@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_16"
+    android:background="?selectableItemBackground">
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/materialRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:isIndicator="true"
+        android:minHeight="25dp"
+        android:rating="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mrb_progressBackgroundTint="@color/grey_light" />
+
+    <TextView
+        android:id="@+id/tvTimeAgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_54_min_ago"
+        android:textColor="@color/grey_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/great_little_gem_right_on_the_water"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialRatingBar" />
+
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/users___user_2_fill"
+        android:drawablePadding="8dp"
+        android:text="@string/by_jerome_bell"
+        android:textColor="@color/grey_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeadline" />
+
+    <TextView
+        android:visibility="gone"
+        android:drawableTint="#B5B8BB"
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="8dp"
+        android:text=""
+        android:textColor="@color/grey_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeadline" />
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:layout_marginVertical="8dp"
+        android:id="@+id/layoutAttachment"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivAttachment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutAttachment"
+        android:id="@+id/tvComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/overall_a_very_good_dining_experience_friendly_staff_good_food_and_great_views_i_would_eat_here_again"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="@dimen/margin_16"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tvComment">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/systems___arrow_go_back_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/martin_berasategui"
+            android:textColor="@color/grey_light"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="@string/_12_02_21_23_45"
+            android:textColor="@color/grey_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/thanks_bro"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/btnBack"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reply">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbDislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/custom_thumbs_down_selector"
+            android:padding="4dp"
+            android:text="@string/_234"
+            android:textColor="@color/grey_light"
+
+            app:layout_constraintTop_toBottomOf="@+id/tvComment"
+            app:useMaterialThemeColors="false" />
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:button="@drawable/custom_thumbs_up_selector"
+            android:padding="4dp"
+            android:text="@string/_234"
+            android:textColor="@color/grey_light"
+            app:layout_constraintTop_toBottomOf="@+id/tvComment"
+            app:useMaterialThemeColors="false" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_gravity="center"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_emoji_layout"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/recyclerViewEmojis"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_size"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llEmojis"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:gravity="end"-->
+<!--            android:orientation="horizontal">-->
+
+<!--&lt;!&ndash;                        <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="@dimen/icon_size"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="@dimen/icon_size"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_marginHorizontal="4dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:background="?selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:scaleType="centerCrop"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:src="@drawable/crying_face" />&ndash;&gt;-->
+
+<!--            &lt;!&ndash;            <ImageButton&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_width="@dimen/icon_size"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_height="@dimen/icon_size"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_marginHorizontal="4dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:background="?selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:scaleType="centerCrop"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:src="@drawable/emoji_1" />&ndash;&gt;-->
+
+<!--            &lt;!&ndash;            <ImageButton&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_width="@dimen/icon_size"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_height="@dimen/icon_size"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_marginHorizontal="4dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:background="?selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:scaleType="centerCrop"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:src="@drawable/emoji_2" />&ndash;&gt;-->
+
+
+<!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/__more_2_line"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:tint="@color/green" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
